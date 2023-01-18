@@ -1,0 +1,244 @@
+from binarytree import Node
+root = Node(3)
+root.left = Node(6)
+root.right = Node(8)
+
+# Getting binary tree
+print('Binary tree :', root)
+
+# Getting list of nodes
+print('List of nodes :', list(root))
+
+# Getting inorder of nodes
+print('Inorder of nodes :', root.inorder)
+
+# Checking tree properties
+print('Size of tree :', root.size)
+print('Height of tree :', root.height)
+
+# Get all properties at once
+print('Properties of tree : \n', root.properties)
+
+
+OUTPUT:
+
+Binary tree : 
+3 
+/ \ 
+6 8
+List of nodes : [Node(3), Node(6), Node(8)]
+Inorder of nodes : [Node(6), Node(3), Node(8)]
+Size of tree : 3
+Height of tree : 1
+Properties of tree : 
+{‘height’: 1, ‘size’: 3, ‘is_max_heap’: False, ‘is_min_heap’: True, ‘is_perfect’: True, ‘is_strict’: True, ‘is_complete’: True, ‘leaf_count’: 2, ‘min_node_value’: 3, ‘max_node_value’: 8, ‘min_leaf_depth’: 1, ‘max_leaf_depth’: 1, ‘is_bst’: False, ‘is_balanced’: True, ‘is_symmetric’: False}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Creating binary tree
+# from given list
+from binarytree import build
+
+
+# List of nodes
+nodes =[3, 6, 8, 2, 11, None, 13]
+
+# Building the binary tree
+binary_tree = build(nodes)
+print('Binary tree from list :\n',
+	binary_tree)
+
+# Getting list of nodes from
+# binarytree
+print('\nList from binary tree :',
+	binary_tree.values)
+
+
+OUTPUT:
+
+Binary tree from list :
+ 
+    ___3
+   /    \
+  6      8
+ / \      \
+2   11     13
+
+
+List from binary tree : [3, 6, 8, 2, 11, None, 13]
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+from binarytree import tree
+
+
+# Create a random binary
+# tree of any height
+root = tree()
+print("Binary tree of any height :")
+print(root)
+
+# Create a random binary
+# tree of given height
+root2 = tree(height = 2)
+print("Binary tree of given height :")
+print(root2)
+
+# Create a random perfect
+# binary tree of given height
+root3 = tree(height = 2,
+			is_perfect = True)
+print("Perfect binary tree of given height :")
+print(root3)
+
+
+OUTPUT:
+
+Binary tree of any height :
+
+      14____
+     /      \
+    2        5__
+   /        /   \
+  6        1     13
+ /        /     /  \
+7        9     4    8
+
+Binary tree of given height :
+
+  1__
+ /   \
+5     2
+     / \
+    4   3
+
+Perfect binary tree of given height :
+
+    __3__
+   /     \
+  2       4
+ / \     / \
+6   0   1   5
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+from binarytree import bst
+
+
+# Create a random BST
+# of any height
+root = bst()
+print('BST of any height : \n',
+	root)
+
+# Create a random BST of
+# given height
+root2 = bst(height = 2)
+print('BST of given height : \n',
+	root2)
+
+# Create a random perfect
+# BST of given height
+root3 = bst(height = 2,
+			is_perfect = True)
+print('Perfect BST of given height : \n',
+	root3)
+
+
+OUTPUT:
+
+BST of any height : 
+ 
+        ____9______
+       /           \
+    __5__       ____12___
+   /     \     /         \
+  2       8   10         _14
+ / \     /      \       /
+1   4   7        11    13
+
+BST of given height : 
+ 
+    5
+   / \
+  4   6
+ /
+3
+
+Perfect BST of given height : 
+ 
+    __3__
+   /     \
+  1       5
+ / \     / \
+0   2   4   6
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+from binarytree import heap
+
+
+# Create a random max-heap
+root = heap()
+print('Max-heap of any height : \n',
+	root)
+
+# Create a random max-heap
+# of given height
+root2 = heap(height = 2)
+
+print('Max-heap of given height : \n',
+	root2)
+
+# Create a random perfect
+# min-heap of given height
+root3 = heap(height = 2,
+			is_max = False,
+			is_perfect = True)
+
+print('Perfect min-heap of given height : \n',
+	root3)
+
+
+OUTPUT:
+
+Max-heap of any height : 
+ 
+         _______14______
+        /               \
+    ___12__            __13__
+   /       \          /      \
+  10        8        3        9
+ /  \      / \      / \      /
+1    5    4   6    0   2    7
+
+Max-heap of given height : 
+ 
+    __6__
+   /     \
+  4       5
+ / \     / \
+2   0   1   3
+
+Perfect min-heap of given height : 
+ 
+    __0__
+   /     \
+  1       3
+ / \     / \
+2   6   4   5
+
+
+
+
+
+
+
